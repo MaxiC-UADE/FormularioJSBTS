@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Consultas - Estudio Jurídico</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilo común para todos los inputs */
+        input, textarea, select {
+            border: 2px solid #0d6efd; /* Borde azul */
+            border-radius: 8px; /* Bordes redondeados */
+            padding: 10px;
+            transition: border-color 0.3s ease;
+        }
+        input:focus, textarea:focus, select:focus {
+            border-color: #6610f2; /* Cambiar color del borde al enfocarse */
+            outline: none;
+            box-shadow: 0 0 5px rgba(102, 16, 242, 0.5); /* Sombra suave */
+        }
+        /* Footer siempre al final */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Menú de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Estudio Jurídico</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Formulario -->
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Consulta al Estudio Jurídico</h1>
+        <form id="consulta-form">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre completo</label>
+                <input type="text" id="name" class="form-control" placeholder="Ingresa tu nombre completo" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="email" id="email" class="form-control" placeholder="Ingresa tu correo electrónico" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Teléfono</label>
+                <input type="tel" id="phone" class="form-control" placeholder="Ingresa tu número de teléfono" required>
+            </div>
+            <div class="mb-3">
+                <label for="consulta" class="form-label">Consulta</label>
+                <textarea id="consulta" class="form-control" rows="4" placeholder="Escribe tu consulta aquí..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Enviar Consulta</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center py-3">
+        <p class="mb-0">© 2024 Estudio Jurídico - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript -->
+    <script>
+        // Muestra un mensaje al enviar el formulario
+        document.getElementById('consulta-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío real del formulario
+            alert('¡Gracias por tu consulta! Nos pondremos en contacto contigo pronto.');
+            document.getElementById('consulta-form').reset(); // Limpia los campos del formulario
+        });
+    </script>
+</body>
+</html>
